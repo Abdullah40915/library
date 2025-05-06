@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="adminlogin.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Admin Login</h2>
+      <form id="adminLoginForm">
+        <div class="input-group">
+          <label for="adminUsername">Username</label>
+          <input
+            type="text"
+            id="adminUsername"
+            placeholder="Enter admin username"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="adminPassword">Password</label>
+          <input
+            type="password"
+            id="adminPassword"
+            placeholder="Enter admin password"
+            required
+          />
+        </div>
+        <button type="submit">Login</button>
+        <p id="error" class="error-message"></p>
+      </form>
+    </div>
+
+    <script src="adminlogin.js"></script>
+  </body>
+</html>

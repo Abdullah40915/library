@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book Management - Admin</title>
+    <link rel="stylesheet" href="books.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📚 Nima Library - Book Management</h1>
+
+      <div class="actions">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by name or author"
+        />
+        <button onclick="openAddForm()">➕ Add New Book</button>
+      </div>
+
+      <table id="bookTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Add/Edit Form -->
+    <div id="bookFormContainer" class="modal hidden">
+      <div class="modal-content">
+        <h2 id="formTitle">Add Book</h2>
+        <input type="text" id="bookName" placeholder="Book Name" />
+        <input type="text" id="bookAuthor" placeholder="Author" />
+        <input type="number" id="bookYear" placeholder="Year" />
+        <div class="form-actions">
+          <button onclick="saveBook()">💾 Save</button>
+          <button onclick="closeForm()">❌ Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="books.js"></script>
+  </body>
+</html>
