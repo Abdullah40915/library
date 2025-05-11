@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter your username"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <button type="submit">Login</button>
+        <p id="error" class="error-message"></p>
+      </form>
+      <p class="signup-link">
+        Don't have an account? <a href="signup.html">Sign Up</a>
+      </p>
+    </div>
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const username = document.getElementById("username").value.trim();
+          const password = document.getElementById("password").value.trim();
+          const error = document.getElementById("error");
+
+          // Get all users from localStorage
+          let users = JSON.parse(localStorage.getItem("users")) || [];
+
+          // Check if the entered username and password match any user in localStorage
+          let user = users.find(
+            (user) => user.username === username && user.password === password
+          );
+
+          if (user) {
+            alert("Login successful!");
+            error.textContent = "";
+            // Redirect to the dashboard or another page after successful login
+            window.location.href = "dashboard.html"; // Replace with the actual page
+          } else {
+            if (!users.some((user) => user.username === username)) {
+              error.textContent = "Invalid username!";
+            } else {
+              error.textContent = "Invalid password!";
+            }
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -20,6 +20,10 @@
           />
         </div>
         <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter email" required />
+        </div>
+        <div class="input-group">
           <label for="password">Password</label>
           <input
             type="password"
@@ -28,12 +32,57 @@
             required
           />
         </div>
-        <button type="submit">Signup</button>
-        <p id="error" class="error-message"></p>
+        <div class="input-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm password"
+            required
+          />
+        </div>
+        <button type="submit">Sign Up</button>
+        <p class="error-message" id="error"></p>
       </form>
-      <p>Already have an account? <a href="login.html">Login</a></p>
+      <p class="switch">
+        Already have an account?
+        <a href="login.html">Login</a>
+      </p>
     </div>
 
-    <script src="javascript/signup.js"></script>
+    <script>
+      document
+        .getElementById("signupForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const username = document.getElementById("username").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const password = document.getElementById("password").value.trim();
+          const confirmPassword = document
+            .getElementById("confirmPassword")
+            .value.trim();
+          const error = document.getElementById("error");
+
+          if (!username || !email || !password || !confirmPassword) {
+            error.textContent = "Please fill in all fields.";
+            return;
+          }
+
+          if (password !== confirmPassword) {
+            error.textContent = "Passwords do not match.";
+            return;
+          }
+
+          let users = JSON.parse(localStorage.getItem("users")) || [];
+          if (users.some((user) => user.username === username)) {
+            error.textContent = "Username already exists!";
+            return;
+          }
+          users.push({ username, email, password });
+          localStorage.setItem("users", JSON.stringify(users));
+          alert("Signup successful!");
+          window.location.href = "login.html";
+        });
+    </script>
   </body>
 </html>

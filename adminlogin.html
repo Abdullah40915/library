@@ -33,6 +33,31 @@
       </form>
     </div>
 
-    <script src="javascript/adminlogin.js"></script>
+    <script>
+      document
+        .getElementById("adminLoginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const adminUsername = document
+            .getElementById("adminUsername")
+            .value.trim();
+          const adminPassword = document
+            .getElementById("adminPassword")
+            .value.trim();
+          const error = document.getElementById("error");
+          const correctAdminUsername = "admin";
+          const correctAdminPassword = "admin123";
+          if (
+            adminUsername === correctAdminUsername &&
+            adminPassword === correctAdminPassword
+          ) {
+            alert("Admin login successful!");
+            window.location.href = "admin_home.html";
+          } else {
+            error.textContent = "Incorrect username or password!";
+          }
+        });
+    </script>
   </body>
 </html>
