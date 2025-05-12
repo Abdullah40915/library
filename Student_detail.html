@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Records | Nima Library</title>
+    <link rel="stylesheet" href="css/Student_detail.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📘 Student Records & Book Activity</h1>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="🔍 Search by student name or ID"
+        />
+      </div>
+
+      <div class="table-wrapper">
+        <table id="studentTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Student Name</th>
+              <th>Book</th>
+              <th>Issue Date</th>
+              <th>Return Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="javascript/Student_detail.js"></script>
+  </body>
+</html>
