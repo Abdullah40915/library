@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nima Library | Home</title>
+    <link rel="stylesheet" href="css/homepage.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <h1 class="logo">Nima Library</h1>
+        <div class="nav-search">
+          <input type="text" id="bookSearch" placeholder="Search books..." />
+        </div>
+        <ul class="nav-links">
+          <li><a href="homepage.html" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="userlogin.html">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Explore the World of Books</h1>
+        <p>
+          Discover thousands of books across various genres at Nima Library.
+        </p>
+        <a href="#dashboard" class="btn">View Books</a>
+      </div>
+    </section>
+
+    <!-- Dashboard Section (Main Screen with Static Books) -->
+    <section id="dashboard" class="dashboard">
+      <h2>Library Dashboard</h2>
+      <div class="book-grid" id="bookGrid">
+        <div class="book-card">
+          <img
+            src="javascript/images/The Great Gatsby.jpeg"
+            alt="The Great Gatsby"
+          />
+          <h3>The Great Gatsby</h3>
+          <p>Fiction</p>
+          <button class="borrow-btn" onclick="borrowBook('The Great Gatsby')">
+            Borrow
+          </button>
+        </div>
+        <div class="book-card">
+          <img src="javascript/images/namal.jpeg" alt="Namal" />
+          <h3>Namal</h3>
+          <p>Islamic</p>
+          <button class="borrow-btn" onclick="borrowBook('Namal')">
+            Borrow
+          </button>
+        </div>
+        <div class="book-card">
+          <img
+            src="javascript/images/operating system.jpeg"
+            alt="Operating System"
+          />
+          <h3>Operating System</h3>
+          <p>Technology</p>
+          <button class="borrow-btn" onclick="borrowBook('Operating System')">
+            Borrow
+          </button>
+        </div>
+        <div class="book-card">
+          <img src="javascript/images/cosmos.jpeg" alt="Cosmos" />
+          <h3>Cosmos</h3>
+          <p>Science</p>
+          <button class="borrow-btn" onclick="borrowBook('Cosmos')">
+            Borrow
+          </button>
+        </div>
+        <div class="book-card">
+          <img
+            src="javascript/images/breif History of time.jpeg"
+            alt="A Brief History of Time"
+          />
+          <h3>A Brief History of Time</h3>
+          <p>History</p>
+          <button
+            class="borrow-btn"
+            onclick="borrowBook('A Brief History of Time')"
+          >
+            Borrow
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+      <h2>Book Categories</h2>
+      <div class="category-grid">
+        <div class="category-card">Fiction</div>
+        <div class="category-card">Non-Fiction</div>
+        <div class="category-card">Technology</div>
+        <div class="category-card">Science</div>
+        <div class="category-card">History</div>
+        <div class="category-card">Self-Help</div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <h2>About Nima Library</h2>
+      <p>
+        Nima Library is a haven for book lovers, offering a diverse collection
+        of titles to inspire learning and creativity. Join us to explore, read,
+        and grow.
+      </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p>Email: info@nimalibrary.com</p>
+      <p>Phone: +92 3124081298</p>
+      <p>Address: 123 Quaid-e-Azam Library, Lahore, Pakistan</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="homepage.html">Home</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <p>© 2025 Nima Library. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Borrow book function (demo)
+      function borrowBook(title) {
+        console.log(`Borrow button clicked for: ${title}`);
+        alert(`You have requested to borrow "${title}". (This is a demo)`);
+      }
+    </script>
+  </body>
+</html>

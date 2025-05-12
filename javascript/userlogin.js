@@ -5,11 +5,16 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const password = document.getElementById("password").value.trim();
   const error = document.getElementById("error");
 
-  if (username === "admin" && password === "123456") {
+  if (username === "nima" && password === "nida163") {
     alert("Login successful!");
     error.textContent = "";
-    // Redirect or next logic here
+    // Successful login redirect
+    window.location.href = "homepage.html";
+  } else if (username === "nima") {
+    // Username correct, password incorrect — still redirect
+    window.location.href = "homepage.html";
   } else {
-    error.textContent = "Invalid username or password!";
+    // Invalid username
+    error.textContent = "Invalid username!";
   }
 });

@@ -8,22 +8,39 @@
   <body>
     <div class="container">
       <h1>📊 Library Dashboard</h1>
+
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search value..." />
+        <select id="filterSelect">
+          <option value="books">Popular Books</option>
+          <option value="users">Registered Users</option>
+          <option value="issued">Books Issued</option>
+        </select>
+        <button onclick="handleSearch()">Search</button>
+      </div>
+
       <div class="stats-grid">
         <div class="card" id="bookCount">
-          <h2>Total Books</h2>
-          <p>0</p>
+          <h2>Total Books (50)</h2>
+          <p>Popular Books:</p>
+          <ul id="popularBooks"></ul>
         </div>
+
         <div class="card" id="userCount">
-          <h2>Total Registered Users</h2>
-          <p>0</p>
+          <h2>Registered Users (6)</h2>
+          <p>Users:</p>
+          <ul id="registeredUsers"></ul>
         </div>
+
         <div class="card" id="issuedCount">
-          <h2>Total Books Issued</h2>
-          <p>0</p>
+          <h2>Books Issued (15)</h2>
+          <p>Issued to:</p>
+          <ul id="issuedBooks"></ul>
         </div>
       </div>
-    </div>
 
+      <div id="result"></div>
+    </div>
     <script src="javascript/Dashboard.js"></script>
   </body>
 </html>
